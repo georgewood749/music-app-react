@@ -1,3 +1,13 @@
+.headerDiv {
+    background-color: rgb(159, 255, 255);
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
 ul {
     display: flex;
     justify-content: space-between;

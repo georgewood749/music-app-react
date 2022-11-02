@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function Home() {
     return (
-        <div>Home</div>
+        <div>
+            <h1>Welcome to our Music App!</h1>
+        </div>
     )
 }
