@@ -1,17 +1,9 @@
-import { render, screen } from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
-import BackButton from ".";
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
-describe('back button', () => {
-    beforeEach(() => render(
-        <MemoryRouter>
-            <BackButton />
-        </MemoryRouter>
-    ))
-
-    test('render back button', () => {
-        const btn = screen.getByRole('button', { name: "BackButton" })
-        expect(btn).toBeInTheDocument
-    })
-
-})
+export default function BackButton() {
+    const navigate = useNavigate()
+    return (
+        <button onClick={() => navigate(-1)}>BackButton</button>
+    )
+}
