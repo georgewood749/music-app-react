@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
+import { AlbumComponent, AlbumContext, AlbumItem } from '../../../components'
 
-export default function Album() {
+export default function Album(name, release, cover) {
+    const [albums, setAlbums] = useContext(AlbumContext)
     const params = useParams()
-    console.log(params)
+    console.log(albums[0].name)
     return (
         <div>
-            <h4>{params.name}</h4>
+            <AlbumComponent name={albums.name} release={albums.release} cover={albums.cover} />
         </div>
     )
 }

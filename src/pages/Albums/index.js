@@ -3,9 +3,13 @@ import { Link, Outlet } from 'react-router-dom'
 import { AlbumContext } from '../../components'
 
 
+// function testLog (album) {
+//     console.log(album)
+// }
+
 export default function Albums() {
     const [albums, setAlbums] = useContext(AlbumContext)
-    console.log(albums)
+    // console.log(albums)
     return (
         <div>
             <h1>Zeppelin Albums</h1>
@@ -20,7 +24,7 @@ export default function Albums() {
             <Outlet /> */}
             <ul>
                 {albums.map((album) => (
-                    <li key={album.name}>
+                    <li key={album.id}>
                         <Link to={album.id}>{album.name}</Link>
                     </li>
                 ))}
