@@ -1,7 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { AlbumContext } from '../AlbumContext';
+
+
 
 export default function AlbumForm({ addAlbum, albums }) {
 
+    const [albumsContext, setAlbumsContext] = useContext(AlbumContext)
 
     const [albumInfo, setAlbumInfo] = useState({
         name: "",
@@ -16,10 +20,11 @@ export default function AlbumForm({ addAlbum, albums }) {
     const handleSubmit = (e) => {
         e.preventDefault();
         addAlbum(albumInfo);
-        setAlbumInfo([
+        setAlbumsContext([
             ...albums,
             { name: "", release: "", cover: "", id: Math.random() * 1000 }
         ]);
+        console.log(albums)
     };
 
     return (
