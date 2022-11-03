@@ -1,16 +1,19 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
-import { AlbumContext } from '../../components'
+// import { AlbumContext } from '../../components'
 import Album from './Album'
 import { NavLink } from 'react-router-dom';
+import AlbumForm from '../../components/AlbumForm';
+import AlbumList from '../../components/AlbumList'
 
 
-// function testLog (album) {
-//     console.log(album)
-// }
 
-export default function Albums() {
-    const [albums, setAlbums] = useContext(AlbumContext)
+export default function Albums(album) {
+    // const [albums, setAlbums] = useContext(AlbumContext)
+    const [albums, updateAlbums] = useState([]);
+const addAlbum = (album) => {
+    updateAlbums([...albums, album])
+}
     return (
         <div>
             <h1>Zeppelin Albums</h1>
@@ -19,6 +22,12 @@ export default function Albums() {
                 <li><NavLink to="LedZeppelinII">LedZeppelinII</NavLink></li>
                 <li><NavLink to="LedZeppelinIII">LedZeppelinIII</NavLink></li>
                 <li><NavLink to="LedZeppelinIV">LedZeppelinIV</NavLink></li>
+            </ul>
+            < AlbumForm addAlbum={addAlbum} />
+            <ul>
+                <li>
+                    <AlbumList albums={albums} updateAlbums={updateAlbums}/>
+                </li>
             </ul>
             {/* <br/>
             <Link to="LedZeppelinI">Led Zeppelin I</Link>
