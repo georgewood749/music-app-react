@@ -1,0 +1,30 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.addAlbum {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.link {
+    background-color: rgb(83, 51, 210);
+    font-size: 130%;
+    text-decoration: none;
+    height: 50px;
+    width: 150px;
+}
+
+.active {
+    color: white;
+    background-color: gray;
+    text-decoration: none;
+    border-radius: 30%;
+    
+}
+

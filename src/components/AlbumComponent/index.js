@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './components.css'
 
 export default function AlbumComponent ({ name, release, cover })  {
 
@@ -9,7 +10,7 @@ export default function AlbumComponent ({ name, release, cover })  {
     }
 
     return (
-        <div>
+        <div className='component'>
             <h3>{name}</h3>
             <em>Release date: {release}</em>
             <br></br>

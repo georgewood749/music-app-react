@@ -5,6 +5,7 @@ import Album from './Album'
 import { NavLink } from 'react-router-dom';
 import AlbumForm from '../../components/AlbumForm';
 import AlbumList from '../../components/AlbumList'
+import './albums.css'
 
 
 
@@ -15,19 +16,22 @@ const addAlbum = (album) => {
     updateAlbums([...albums, album])
 }
     return (
-        <div>
+        <>
             <h1>Zeppelin Albums</h1>
-            <ul>
-                <li><NavLink to="LedZeppelinI">LedZeppelinI</NavLink></li>
-                <li><NavLink to="LedZeppelinII">LedZeppelinII</NavLink></li>
-                <li><NavLink to="LedZeppelinIII">LedZeppelinIII</NavLink></li>
-                <li><NavLink to="LedZeppelinIV">LedZeppelinIV</NavLink></li>
-            </ul>
+            <div className="page">
+            <div className="addAlbum">
             < AlbumForm addAlbum={addAlbum} />
             <ul>
-                <li>
+                <li className="newAlbum">
                     <AlbumList albums={albums} updateAlbums={updateAlbums}/>
                 </li>
+            </ul>
+            </div>
+            <ul>
+                <li className='link'><NavLink to="LedZeppelinI">LedZeppelinI</NavLink></li>
+                <li className='link'><NavLink to="LedZeppelinII">LedZeppelinII</NavLink></li>
+                <li className='link'><NavLink to="LedZeppelinIII">LedZeppelinIII</NavLink></li>
+                <li className='link'><NavLink to="LedZeppelinIV">LedZeppelinIV</NavLink></li>
             </ul>
             {/* <br/>
             <Link to="LedZeppelinI">Led Zeppelin I</Link>
@@ -53,5 +57,6 @@ const addAlbum = (album) => {
             </ul> */}
             <Outlet />
         </div>
+        </>
     )
 }
