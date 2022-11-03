@@ -1,0 +1,13 @@
+input {
+    height: 50px;
+    width: 300px;
+    padding: 5px;
+}
+
+.submit {
+    background-color: aliceblue;
+    border: solid 1px rgb(68, 90, 111);
+    height: 50px;
+    width: 305px;
+    margin-left: 5px;
+}

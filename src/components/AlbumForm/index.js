@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './form.css'
 
 export default function AlbumForm({ addAlbum, albums }) {
 
@@ -56,7 +57,7 @@ export default function AlbumForm({ addAlbum, albums }) {
                     />
                 </div>
                 <div>
-                    <button>Submit new Album</button>
+                    <button className="submit">Submit new Album</button>
                 </div>
             </form>
         </div>
