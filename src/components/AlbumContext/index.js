@@ -2,7 +2,7 @@ import React, { createContext, useState } from "react";
 
 let albumData = [
     {
-        name: "Led Zeppelin I",
+        name: 'Led Zeppelin I',
         release: "1969",
         cover: "https://upload.wikimedia.org/wikipedia/en/e/ef/Led_Zeppelin_-_Led_Zeppelin_%281969%29_front_cover.png",
         id: Math.random() * 1000

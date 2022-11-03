@@ -8,26 +8,26 @@ import { AlbumContext, AlbumForm } from '../../components'
 // }
 
 export default function Albums() {
-    // const [albumsContext, setAlbumsContext] = useContext(AlbumContext)
-    const [albums, updateAlbums] = useState([]);
+    const [albums, setAlbums] = useContext(AlbumContext)
+    // const [albums, updateAlbums] = useState([]);
 
-    const addAlbum = (album) => {
-        updateAlbums([...albums, album])
-    };
-    console.log("albums:", albums)
+    // const addAlbum = (album) => {
+    //     updateAlbums([...albums, album])
+    // };
+
     return (
         <div>
             <h1>Zeppelin Albums</h1>
-            <AlbumForm addAlbum={addAlbum} />
+            <AlbumForm />
             <br />
             <ul>
-                <Link to="LedZeppelinI">Led Zeppelin I</Link>
+                {/* <Link to="LedZeppelinI">Led Zeppelin I</Link>
 
                 <Link to="LedZeppelinII">Led Zeppelin II</Link>
 
                 <Link to="LedZeppelinIII">Led Zeppelin III</Link>
 
-                <Link to="LedZeppelinIV">Led Zeppelin IV</Link>
+                <Link to="LedZeppelinIV">Led Zeppelin IV</Link> */}
                 {albums.map((album) => (
                     <li key={album.id}>
                         <Link to={album.name}>{album.name}</Link>
