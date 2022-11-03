@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import { AlbumContext } from '../../components'
 import Album from './Album'
+import { NavLink } from 'react-router-dom';
 
 
 // function testLog (album) {
@@ -13,6 +14,12 @@ export default function Albums() {
     return (
         <div>
             <h1>Zeppelin Albums</h1>
+            <ul>
+                <li><NavLink to="LedZeppelinI">LedZeppelinI</NavLink></li>
+                <li><NavLink to="LedZeppelinII">LedZeppelinII</NavLink></li>
+                <li><NavLink to="LedZeppelinIII">LedZeppelinIII</NavLink></li>
+                <li><NavLink to="LedZeppelinIV">LedZeppelinIV</NavLink></li>
+            </ul>
             {/* <br/>
             <Link to="LedZeppelinI">Led Zeppelin I</Link>
             <br/>
@@ -22,7 +29,7 @@ export default function Albums() {
             <br/>
             <Link to="LedZeppelinIV">Led Zeppelin IV</Link>
             <Outlet /> */}
-            <ul>
+            {/* <ul>
                 {albums.map((album) => (
                     <li key={album.id}>
                         <Link to={{ 
@@ -34,7 +41,7 @@ export default function Albums() {
                         }}} >{album.name}</Link> 
                     </li>
                 ))}
-            </ul>
+            </ul> */}
             <Outlet />
         </div>
     )

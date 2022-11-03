@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import { AlbumProvider } from './components/AlbumContext';
 import { Header } from './layouts';
-import { Album, Albums, Artists, Artist, Home, NotFound } from './pages';
+import { Albums, Artists, Artist, Home, NotFound, LedZeppelinI, LedZeppelinII, LedZeppelinIII, LedZeppelinIV } from './pages';
 
 
 
@@ -19,7 +19,10 @@ function App() {
             <Route path=":artist" element={<Artist />}></Route>
           </Route>
           <Route path="albums" element={<Albums />}>
-            <Route path=":name" element={<Album />}></Route>
+            <Route path="LedZeppelinI" element={<LedZeppelinI />}></Route>
+            <Route path="LedZeppelinII" element={<LedZeppelinII />}></Route>
+            <Route path="LedZeppelinIII" element={<LedZeppelinIII />}></Route>
+            <Route path="LedZeppelinIV" element={<LedZeppelinIV />}></Route>
           </Route>
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
